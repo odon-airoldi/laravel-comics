@@ -7,5 +7,11 @@
 </head>
 <body>
     
+    @include("partials.header")
+
+    @yield("contain")
+
+    @include("partials.footer")
+    
 </body>
 </html>
