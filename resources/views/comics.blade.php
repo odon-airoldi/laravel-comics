@@ -1,7 +1,6 @@
 @extends("layouts.main")
 
 
-
 @php
 
 $comics = config("comics")
@@ -11,8 +10,8 @@ $comics = config("comics")
 @section("contain")
 
     <div class="row g-3">
-        @foreach (array_slice($comics, 0, 6) as $comic)
-        <div class="col-2">
+        @foreach ($comics as $comic)
+        <div class="col-3">
             <x-card>
                 <x-slot name="title">{{ $comic["title"] }}</x-slot>
                 <x-slot name="description">{{ substr($comic["description"], 0, 160) }}...</x-slot>
@@ -21,7 +20,6 @@ $comics = config("comics")
         </div>
         @endforeach
     </div>
-        
 
 @endsection
 
